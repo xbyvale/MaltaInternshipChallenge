@@ -1,0 +1,503 @@
+/* ============================================================
+   SoundForge — starter stylesheet
+   ------------------------------------------------------------
+   The design tokens (colours, fonts, spacing) are defined for
+   you below. USE THESE VARIABLES instead of hard-coding values.
+
+   Example:
+     .button { background: var(--color-primary); padding: var(--space-3); }
+
+   The layout itself is up to you — build it to match DESIGN-SPEC.md.
+   ============================================================ */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  /* Colours */
+  --color-bg: #0E0B1A;
+  --color-surface: #1A1530;
+  --color-text: #F2F0F7;
+  --color-text-muted: #A39FB8;
+  --color-primary: #7C5CFF;
+  --color-primary-hover: #9B80FF;
+  --color-accent: #22D3A6;
+  --color-border: #2C2545;
+
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --fs-hero: clamp(2.5rem, 6vw, 4rem);
+  --fs-h2: 2rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* Other */
+  --radius: 16px;
+  --content-max: 1120px;
+}
+
+/* ---------- 2. Reset / base (done for you) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* A helper container you can reuse to centre + cap content width.
+   (Optional — use it or build your own approach.) */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+}
+
+.nav-container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.logo-accent {
+  color: var(--color-primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--fs-body);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary-hover);
+}
+
+@media (max-width: 767px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+}
+@media (min-width: 768px) {
+  .feature-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .schedule-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .speaker-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1120px) {
+  .speaker-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.hero {
+  padding-block: var(--space-7);
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-headline {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+}
+
+.hero-tagline {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 0 var(--space-3);
+}
+
+.hero-meta {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: var(--color-text);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.link-secondary {
+  color: var(--color-text);
+  text-decoration: underline;
+  font-size: var(--fs-body);
+}
+
+.link-secondary:hover {
+  color: var(--color-primary-hover);
+}
+
+.about {
+  padding-block: var(--space-7);
+  background: var(--color-bg);
+}
+
+.section-container {
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+.section-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  color: var(--color-text);
+  text-align: center;
+  margin: 0 0 var(--space-4);
+}
+
+.section-intro {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto var(--space-6);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-2);
+}
+
+.card-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2);
+}
+
+.card-text {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.schedule {
+  padding-block: var(--space-7);
+  background: var(--color-surface);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-4);
+}
+
+.schedule-table th,
+.schedule-table td {
+  text-align: left;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+}
+
+.schedule-table th {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.schedule-table td:last-child,
+.schedule-table th:last-child {
+  color: var(--color-text-muted);
+}
+.speakers {
+  padding-block: var(--space-7);
+  background: var(--color-bg);
+}
+
+.speaker-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.speaker-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.speaker-photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-3);
+}
+
+.speaker-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-1);
+}
+
+.speaker-role {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.tickets {
+  padding-block: var(--space-7);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.ticket-card {
+  max-width: 400px;
+  margin: var(--space-4) auto 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+
+.ticket-label {
+  font-size: var(--fs-body);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.ticket-price {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-3);
+}
+
+.ticket-includes {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-4);
+  line-height: 1.6;
+}
+
+.site-footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-5);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.footer-copyright {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--fs-small);
+}
+
+.footer-links a:hover {
+  color: var(--color-primary-hover);
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   3. YOUR STYLES START HERE
+   ------------------------------------------------------------
+   Suggested order: header/nav, hero, about, schedule,
+   speakers, tickets, footer — then add your @media blocks.
+
+   Breakpoints to target (see DESIGN-SPEC.md):
+     @media (min-width: 768px)  { ... }   tablet
+     @media (min-width: 1120px) { ... }   desktop
+   ============================================================ */
+
+/* TODO: header / nav */
+
+/* TODO: hero */
+
+/* TODO: about + feature cards */
+
+/* TODO: schedule */
+
+/* TODO: speakers */
+
+/* TODO: tickets / CTA */
+
+/* TODO: footer */
+
+/* TODO: @media queries for tablet and desktop */

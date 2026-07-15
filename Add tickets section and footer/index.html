@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundForge — Where Music Meets Technology</title>
+
+  <!-- Fonts (already wired up for you — keep these) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!--
+    ============================================================
+    YOUR TASK
+    ------------------------------------------------------------
+    Build the 6 sections described in DESIGN-SPEC.md, in order:
+      1. Header / nav      4. Schedule
+      2. Hero              5. Speakers
+      3. About             6. Tickets (CTA) + Footer
+
+    - Use semantic tags: <header> <nav> <section> <footer> etc.
+    - Use the content EXACTLY as given in DESIGN-SPEC.md.
+    - Style with the CSS variables already defined in css/styles.css.
+    - Make it responsive at 375 / 768 / 1280 px.
+    - Remove these TODO comments before you submit.
+    ============================================================
+  -->
+
+  <!-- TODO: 1. HEADER / NAV -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#top" class="logo">Sound<span class="logo-accent">Forge</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#tickets">Tickets</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- TODO: 2. HERO -->
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <h1 class="hero-headline">Where Music Meets Technology</h1>
+        <p class="hero-tagline">A one-day meetup for producers, developers, and sound designers.</p>
+        <p class="hero-meta">📅 Saturday, 12 September 2026 · Valletta, Malta</p>
+        <div class="hero-actions">
+          <a href="#tickets" class="button button-primary">Get Tickets</a>
+          <a href="#schedule" class="link-secondary">View schedule</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: 3. ABOUT (heading "Why SoundForge?" + 3 feature cards) -->
+    <section class="about" id="about">
+      <div class="section-container">
+        <h2 class="section-heading">Why SoundForge?</h2>
+        <p class="section-intro">
+          SoundForge brings together the people building the future of sound. Spend
+          a day learning, jamming, and connecting with a community that lives where
+          creativity and code overlap.
+        </p>
+
+        <div class="feature-cards">
+          <div class="card">
+            <div class="card-icon">🎛️</div>
+            <h3 class="card-heading">Hands-on Workshops</h3>
+            <p class="card-text">Practical sessions on production, DSP, and live performance tools.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3 class="card-heading">Real Connections</h3>
+            <p class="card-text">Meet producers, audio devs, and founders from across the scene.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3 class="card-heading">Fresh Ideas</h3>
+            <p class="card-text">Talks on AI in music, new instruments, and where the industry is heading.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: 4. SCHEDULE (agenda list or table) -->
+    <section class="schedule" id="schedule">
+      <div class="section-container">
+        <h2 class="section-heading">Schedule</h2>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Session</th>
+              <th>Speaker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09:30</td>
+              <td>Doors open &amp; coffee</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>10:00</td>
+              <td>Keynote: The Sound of 2030</td>
+              <td>Lena Hart</td>
+            </tr>
+            <tr>
+              <td>11:00</td>
+              <td>Workshop: Building a Web Synth</td>
+              <td>Marco Vella</td>
+            </tr>
+            <tr>
+              <td>12:30</td>
+              <td>Lunch &amp; networking</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>13:30</td>
+              <td>Panel: AI in Music Production</td>
+              <td>All speakers</td>
+            </tr>
+            <tr>
+              <td>15:00</td>
+              <td>Workshop: Mixing for Streaming</td>
+              <td>Priya Anand</td>
+            </tr>
+            <tr>
+              <td>16:30</td>
+              <td>Live set &amp; closing</td>
+              <td>Dani Cohen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TODO: 5. SPEAKERS (4 cards) -->
+    <section class="speakers" id="speakers">
+      <div class="section-container">
+        <h2 class="section-heading">Speakers</h2>
+
+        <div class="speaker-cards">
+          <div class="speaker-card">
+            <img src="https://placehold.co/300x300/1A1530/F2F0F7?text=Lena+Hart" alt="Lena Hart" class="speaker-photo">
+            <h3 class="speaker-name">Lena Hart</h3>
+            <p class="speaker-role">Founder, ToneLab</p>
+          </div>
+
+          <div class="speaker-card">
+            <img src="https://placehold.co/300x300/1A1530/F2F0F7?text=Marco+Vella" alt="Marco Vella" class="speaker-photo">
+            <h3 class="speaker-name">Marco Vella</h3>
+            <p class="speaker-role">Audio Engineer, Relay</p>
+          </div>
+
+          <div class="speaker-card">
+            <img src="https://placehold.co/300x300/1A1530/F2F0F7?text=Priya+Anand" alt="Priya Anand" class="speaker-photo">
+            <h3 class="speaker-name">Priya Anand</h3>
+            <p class="speaker-role">Mixing Engineer</p>
+          </div>
+
+          <div class="speaker-card">
+            <img src="https://placehold.co/300x300/1A1530/F2F0F7?text=Dani+Cohen" alt="Dani Cohen" class="speaker-photo">
+            <h3 class="speaker-name">Dani Cohen</h3>
+            <p class="speaker-role">Producer &amp; DJ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO: 6a. TICKETS / CTA -->
+    <section class="tickets" id="tickets">
+      <div class="section-container">
+        <h2 class="section-heading">Tickets</h2>
+        <p class="section-intro">Grab your spot</p>
+
+        <div class="ticket-card">
+          <p class="ticket-label">General Admission</p>
+          <p class="ticket-price">€39</p>
+          <p class="ticket-includes">All talks, workshops, lunch, and the after-party.</p>
+          <a href="#tickets" class="button button-primary">Get Tickets</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TODO: 6b. FOOTER -->
+  <footer class="site-footer">
+    <div class="section-container footer-content">
+      <div class="footer-brand">
+        <p class="footer-logo">SoundForge</p>
+        <p class="footer-copyright">© 2026</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#tickets">Tickets</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Optional: tiny vanilla JS only if you add a mobile menu toggle.
+       Delete this if you don't use it. -->
+  <!-- <script src="js/main.js"></script> -->
+</body>
+</html>
