@@ -1,0 +1,127 @@
+/* ============================================================
+   SoundForge — starter stylesheet
+   ------------------------------------------------------------
+   The design tokens (colours, fonts, spacing) are defined for
+   you below. USE THESE VARIABLES instead of hard-coding values.
+
+   Example:
+     .button { background: var(--color-primary); padding: var(--space-3); }
+
+   The layout itself is up to you — build it to match DESIGN-SPEC.md.
+   ============================================================ */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  /* Colours */
+  --color-bg: #0E0B1A;
+  --color-surface: #1A1530;
+  --color-text: #F2F0F7;
+  --color-text-muted: #A39FB8;
+  --color-primary: #7C5CFF;
+  --color-primary-hover: #9B80FF;
+  --color-accent: #22D3A6;
+  --color-border: #2C2545;
+
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --fs-hero: clamp(2.5rem, 6vw, 4rem);
+  --fs-h2: 2rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* Other */
+  --radius: 16px;
+  --content-max: 1120px;
+}
+
+/* ---------- 2. Reset / base (done for you) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+/* A helper container you can reuse to centre + cap content width.
+   (Optional — use it or build your own approach.) */
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+/* ============================================================
+   3. YOUR STYLES START HERE
+   ------------------------------------------------------------
+   Suggested order: header/nav, hero, about, schedule,
+   speakers, tickets, footer — then add your @media blocks.
+
+   Breakpoints to target (see DESIGN-SPEC.md):
+     @media (min-width: 768px)  { ... }   tablet
+     @media (min-width: 1120px) { ... }   desktop
+   ============================================================ */
+
+/* TODO: header / nav */
+
+/* TODO: hero */
+
+/* TODO: about + feature cards */
+
+/* TODO: schedule */
+
+/* TODO: speakers */
+
+/* TODO: tickets / CTA */
+
+/* TODO: footer */
+
+/* TODO: @media queries for tablet and desktop */
