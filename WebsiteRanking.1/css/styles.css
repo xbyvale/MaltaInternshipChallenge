@@ -1,0 +1,245 @@
+/* Malta — Unsere Spots
+   Cleaner, Apple-naher Look. Primärfarben Weiß & Beige. */
+
+:root {
+  --white:      #ffffff;
+  --beige:      #f4efe6;   /* Seitenhintergrund */
+  --beige-deep: #e9e0d1;   /* Trennlinien, Rahmen */
+  --card:       #fbf9f5;   /* Kartenflächen */
+  --ink:        #1d1d1f;   /* Apple-Tinte */
+  --muted:      #6f6a60;   /* Sekundärtext */
+  --faint:      #9a9488;
+
+  --look:   #b8956a;   /* warmes Beige-Braun — Aussehen */
+  --reach:  #7d8b73;   /* ruhiges Salbeigrün — Erreichbarkeit */
+  --crowd:  #c08262;   /* gedämpftes Terrakotta — Andrang (mehr = voller) */
+
+  --track:  #ece5d8;   /* leere Meter-Spur */
+
+  --radius: 22px;
+  --shadow: 0 1px 2px rgba(29,29,31,.04), 0 18px 40px rgba(29,29,31,.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--beige);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+em { font-style: normal; color: var(--ink); font-weight: 500; }
+
+.wrap {
+  width: 100%;
+  max-width: 940px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---------- Masthead ---------- */
+
+.masthead {
+  padding: clamp(72px, 12vw, 140px) 0 clamp(40px, 6vw, 72px);
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.masthead h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(40px, 8.5vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  margin-bottom: 26px;
+}
+
+.lede {
+  max-width: 560px;
+  margin: 0 auto 34px;
+  color: var(--muted);
+  font-size: clamp(16px, 2.2vw, 18px);
+}
+
+.legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dot--look  { background: var(--look); }
+.dot--reach { background: var(--reach); }
+.dot--crowd { background: var(--crowd); }
+
+/* ---------- Spots ---------- */
+
+main.wrap { padding-bottom: 40px; }
+
+.spot {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  background: var(--card);
+  border: 1px solid var(--beige-deep);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+
+.spot__media { position: relative; min-height: 260px; background: var(--beige-deep); }
+.spot__media img,
+.spot__media .ph {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spot__index {
+  position: absolute;
+  top: 16px; left: 18px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(29,29,31,.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 11px;
+  border-radius: 100px;
+  letter-spacing: .02em;
+}
+
+.spot__body {
+  padding: clamp(26px, 3.4vw, 40px);
+  display: flex;
+  flex-direction: column;
+}
+
+.spot__head { margin-bottom: 14px; }
+
+.spot__body h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(24px, 3.6vw, 30px);
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+
+.spot__place {
+  font-size: 13px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.spot__note {
+  color: var(--muted);
+  font-size: 15.5px;
+  margin-bottom: 26px;
+}
+
+/* ---------- Ratings ---------- */
+
+.ratings { margin-top: auto; display: grid; gap: 15px; }
+
+.rating dt {
+  font-size: 12px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.rating dd {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 14px;
+}
+
+.meter {
+  height: 7px;
+  border-radius: 100px;
+  background: var(--track);
+  overflow: hidden;
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  width: var(--v);
+  border-radius: 100px;
+}
+.meter--look  > span { background: var(--look); }
+.meter--reach > span { background: var(--reach); }
+.meter--crowd > span { background: var(--crowd); }
+
+/* Andrang optisch als „Warnung“ markieren: gestreifte Spur */
+.rating--crowd .meter {
+  background:
+    repeating-linear-gradient(-45deg,
+      var(--track) 0, var(--track) 5px,
+      #e3d9c9 5px, #e3d9c9 10px);
+}
+
+.rating dd b {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+}
+.rating dd i { font-style: normal; color: var(--faint); font-size: 13px; }
+
+/* ---------- Footer ---------- */
+
+.foot {
+  padding: 48px 0 72px;
+  text-align: center;
+  color: var(--faint);
+  font-size: 13.5px;
+  border-top: 1px solid var(--beige-deep);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 720px) {
+  .spot { grid-template-columns: 1fr; }
+  .spot__media { min-height: 220px; }
+}
+
+/* ---------- Zugänglichkeit ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
